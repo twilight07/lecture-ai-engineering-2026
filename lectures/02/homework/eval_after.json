@@ -1,0 +1,201 @@
+{
+  "summary": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 0.8571428571428571,
+    "both_rate": 0.8571428571428571,
+    "seconds": 38.4
+  },
+  "rows": [
+    {
+      "question": "推奨スペックは？",
+      "raw": "{\"answer\": \"動作環境は Windows 10 / 11（64bit）で、メモリ 8GB 以上を推奨します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "このゲームが動く OS とメモリの目安を教えてください",
+      "raw": "{\"answer\": \"動作環境は Windows 10 / 11（64bit）で、メモリ 8GB 以上を推奨します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Windows 11 で遊べますか",
+      "raw": "{\"answer\": \"動作環境は Windows 11（64bit）で、メモリ 8GB 以上を推奨します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "セーブの場所は？",
+      "raw": "{\"answer\": \"セーブデータはゲームフォルダ内の save フォルダに自動で保存されます。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "進行状況はどのフォルダに記録されますか",
+      "raw": "{\"answer\": \"セーブデータはゲームフォルダ内の save フォルダに自動で保存されます。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "セーブデータをバックアップしたいのですが、どこにありますか",
+      "raw": "{\"answer\": \"セーブデータはゲームフォルダ内の save フォルダに自動で保存されます。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "返金のルールは？",
+      "raw": "{\"answer\": \"購入後 14 日以内かつプレイ時間 2 時間未満なら、返金を申請できます。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "購入から何日以内なら返金を申請できますか",
+      "raw": "{\"answer\": \"購入後 14 日以内かつプレイ時間 2 時間未満なら、返金を申請できます。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "どれくらい遊ぶと返金できなくなりますか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "アップデートの予定は？",
+      "raw": "{\"answer\": \"アップデートは毎月第 1 金曜日に配信します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "新しいバージョンは何曜日に配信されますか",
+      "raw": "{\"answer\": \"アップデートは毎月第 1 金曜日に配信します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "毎月いつ更新されますか",
+      "raw": "{\"answer\": \"アップデートは毎月第 1 金曜日に配信します。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "不具合はどこに報告しますか",
+      "raw": "{\"answer\": \"不具合の報告は、サポートフォームからログファイルを添付して送ってください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "ゲームが落ちたときの報告のしかたを教えてください",
+      "raw": "{\"answer\": \"不具合の報告は、サポートフォームからログファイルを添付して送ってください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "バグ報告には何を添付すればいいですか",
+      "raw": "{\"answer\": \"不具合の報告は、サポートフォームからログファイルを添付して送ってください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "続編の予定はありますか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "ゲーム実況の配信に使ってもいいですか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "不具合を報告したら、どれくらいで返信がもらえますか",
+      "raw": "{\"answer\": \"不具合の報告は、サポートフォームからログファイルを添付して送ってください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "セーブデータを別の PC に移せますか",
+      "raw": "{\"answer\": \"セーブデータはゲームフォルダ内の save フォルダに自動で保存されます。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "セールの予定はありますか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "マルチプレイはできますか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    }
+  ]
+}
