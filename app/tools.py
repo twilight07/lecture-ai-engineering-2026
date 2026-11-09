@@ -6,10 +6,14 @@
 
 import json
 import random
+import re
+from datetime import datetime
 from functools import cache
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+# 第3回 宿題（実装）: 学習の記録の保存先。.gitignore 済みで、共有しない
+LOG_DIR = Path(__file__).resolve().parent.parent / "learning_log"
 MAX_RESULTS = 3
 
 
@@ -99,3 +103,31 @@ def make_quiz(lecture: int) -> str:
         {"question": f"「{entry['term']}」の意味は？", "answer": entry["definition"]},
         ensure_ascii=False,
     )
+
+
+def _slug(text: str) -> str:
+    """ファイル名に使えない文字を「-」に置き換える（../ などでフォルダの外に出られないようにする）。"""
+    slug = re.sub(r"[^\w\-]+", "-", text).strip("-_")
+    return slug[:40] or "log"
+
+
+def save_learning_log(title: str, content: str) -> str:
+    """学習の記録を learning_log/ フォルダに Markdown ファイルとして保存する。
+
+    利用者が「今日学んだことを記録して」「この内容をメモに残して」のように、
+    学習の記録・メモの保存をはっきり頼んだときだけ使う。頼まれていないのに使わない。
+    title には記録の短い題名（例: "LoRAとQLoRAの違い"）、
+    content には保存する本文（Markdown）を入れる。
+    保存は取り消しにくいので、実行の前に利用者の承認を求める。
+    """
+    if not title.strip() or not content.strip():
+        return "title と content の両方を指定してください。保存はしていません。"
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    now = datetime.now()
+    path = LOG_DIR / f"{now:%Y%m%d-%H%M%S}-{_slug(title)}.md"
+    n = 2
+    while path.exists():  # 同じ秒に同じ題名で保存しても上書きしない
+        path = path.with_name(f"{now:%Y%m%d-%H%M%S}-{_slug(title)}-{n}.md")
+        n += 1
+    path.write_text(f"# {title.strip()}\n\n- 保存日時: {now:%Y-%m-%d %H:%M}\n\n{content.strip()}\n", encoding="utf-8")
+    return f"学習の記録を保存しました: {path.relative_to(LOG_DIR.parent)}"
