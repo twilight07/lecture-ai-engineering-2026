@@ -118,7 +118,8 @@ def save_learning_log(title: str, content: str) -> str:
     学習の記録・メモの保存をはっきり頼んだときだけ使う。頼まれていないのに使わない。
     title には記録の短い題名（例: "LoRAとQLoRAの違い"）、
     content には保存する本文（Markdown）を入れる。
-    保存は取り消しにくいので、実行の前に利用者の承認を求める。
+    保存の前の確認はこのツールを呼んだあとにシステムが利用者に行うので、
+    会話の中で「保存してよいですか？」と聞かずに、そのままこのツールを呼ぶ。
     """
     if not title.strip() or not content.strip():
         return "title と content の両方を指定してください。保存はしていません。"
@@ -129,5 +130,10 @@ def save_learning_log(title: str, content: str) -> str:
     while path.exists():  # 同じ秒に同じ題名で保存しても上書きしない
         path = path.with_name(f"{now:%Y%m%d-%H%M%S}-{_slug(title)}-{n}.md")
         n += 1
-    path.write_text(f"# {title.strip()}\n\n- 保存日時: {now:%Y-%m-%d %H:%M}\n\n{content.strip()}\n", encoding="utf-8")
+    body = content.strip()
+    if body.startswith("# "):  # 本文に見出しがあれば、それを題名として使う（見出しが2つ並ばないように）
+        heading, _, body = body.partition("\n")
+    else:
+        heading = f"# {title.strip()}"
+    path.write_text(f"{heading}\n\n- 保存日時: {now:%Y-%m-%d %H:%M}\n\n{body.strip()}\n", encoding="utf-8")
     return f"学習の記録を保存しました: {path.relative_to(LOG_DIR.parent)}"

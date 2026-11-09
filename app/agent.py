@@ -139,6 +139,7 @@ def run_with_approval(target: Agent, question: str, model, ask=input):
             message_history=result.all_messages(),
             deferred_tool_results=ask_approvals(result.output, ask=ask),
             model=model,
+            usage=result.usage,  # [usage] に承認の前後を合わせた回数が出るようにする
         )
     return result
 

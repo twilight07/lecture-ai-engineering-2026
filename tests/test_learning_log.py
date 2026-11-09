@@ -23,6 +23,12 @@ def test_save_learning_log_writes_markdown(log_dir):
     assert text.startswith("# LoRAとQLoRA") and "量子化" in text
 
 
+def test_save_learning_log_does_not_repeat_heading(log_dir):
+    tools.save_learning_log("PEFT", "# PEFTについて\n\n本文")
+    text = next(log_dir.glob("*.md")).read_text(encoding="utf-8")
+    assert text.count("\n# ") + text.startswith("# ") == 1 and text.startswith("# PEFTについて")
+
+
 def test_save_learning_log_stays_inside_log_dir(log_dir):
     tools.save_learning_log("../../etc/passwd", "本文")
     tools.save_learning_log("../../etc/passwd", "本文")  # 同じ題名でも上書きしない
@@ -56,6 +62,7 @@ def test_run_with_approval(log_dir, answer, saved, capsys):
     result = run_with_approval(agent, "今日の学びを記録して", model, ask=ask)
 
     assert len(asked) == 1
+    assert result.usage.requests >= 2  # 承認の前と後の両方を数える
     assert "[approval] save_learning_log" in capsys.readouterr().out
     assert isinstance(result.output, str)
     assert (len(list(log_dir.glob("*.md"))) == 1 if saved else not log_dir.exists())
